@@ -1,0 +1,60 @@
+<h2>showall images</h2>
+<!-- <div class="row" *ngFor="let imgs of allImg" > -->
+    <!-- <div class="card" *ngFor="let imgs of allImg"> -->
+        <!-- <img src="http://localhost:3000/files/{{imgs.img}}" width="70" height="80"> -->
+        <!-- <div class="container"> -->
+          <!-- <h5>{{imgs.title}}</h5>   -->
+          <!-- <p>{{imgs.comment}}</p>
+          <p>{{imgs.publishdate}}</p>
+          <p>{{imgs.like}}</p> -->
+
+        <!-- </div> -->
+       
+
+
+<!-- </div> -->
+<!-- </div> -->
+
+
+   <!-- <table class="table table-bordered" >
+    <thead>
+        <tr>
+           
+             <th>title</th>
+             <th>comment</th>
+            <th>publishdate</th>
+            <th>like</th>
+            <th>img</th> 
+
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let imgs of allImg">
+             <th>{{imgs.title}}</th>
+             <th>{{imgs.comment}}</th> 
+              <th>{{imgs.publishdate}}</th>
+           <th>{{imgs.like}}</th>
+           <th><img src="http://localhost:3000/files/{{imgs.img}}" width="60" height="60"></th>
+        </tr> 
+    </tbody>
+</table>   -->
+<div class="row"*ngFor="let imgs of allImg" >
+    <!-- {{imgs|json}} -->
+    <div class="card">
+        <span>{{imgs.title}}</span>
+       <div >
+       <!-- http://localhost:3000/files{{imgs.img}} -->
+        <img src="http://localhost:3000/files{{imgs.img}}" width="70" height="80">
+        </div>
+        <span>{{imgs.comment}}</span>
+        <span>{{imgs.publishdate}}</span>
+        <span>{{imgs.like}}</span>
+       
+        <div class="col">
+        <button routerLink="/single/{{imgs._id}}" class="mx-2 btn btn-primary" >show</button>
+        <button routerLink="/image/edit/{{imgs._id}}"  class="mx-2 btn btn-warning">edit</button>
+        <button routerLink="/image/delete/{{imgs._id}}"  class="mx-2 btn btn-danger">delete</button>
+    </div>
+        <!-- <button (click)="handleDelete(user._id)"  class="mx-2 btn btn-danger">delete</button> -->
+    </div>
+</div>

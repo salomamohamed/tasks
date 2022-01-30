@@ -1,0 +1,127 @@
+<!-- <section class="my-4 container">
+    <h3>Register</h3>
+    {{addUser.valid}}
+    <form #addUser="ngForm" (ngSubmit)="handelAddUser(addUser)">
+        <div class="mb-3">
+            <input class="form-control" name="username" ngModel placeholder="username"
+            #username="ngModel"required minlength="3" maxlength="20">
+            <div class="mt-2 alert alert-danger"
+             *ngIf="username.invalid && (username.touched || addUser.submitted)">
+                <p *ngIf="username.errors?.['required']">Name is required</p>
+                <p *ngIf="username.errors?.['minlength']">Name must be between 3 and 20 characters</p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input class="form-control" name="age" ngModel placeholder="age"
+            #age="ngModel" min="18">
+            </div>
+
+            <div class="mb-3">
+                <input class="form-control" name="userphone" ngModel placeholder="userphone"
+                #userphone="ngModel" minlength="11">
+                </div>
+                <div class="mt-2 alert alert-danger"
+                *ngIf="userphone.invalid && (userphone.touched || addUser.submitted)">
+                   
+                   <p *ngIf="userphone.errors?.['minlength']">userphone must be 11 num</p>
+               </div>
+
+            <div class="mb-3">
+                <input class="form-control" name="password" #password="ngModel" ngModel placeholder="enter password"
+               required>
+                <div class="mt-2 alert alert-danger"
+                *ngIf="password.invalid&&(password.touched||addUser.submitted)">
+            <p *ngIf="password.errors?.['required']">password is required</p>
+            </div>
+          </div>
+            <div class="mb-3">
+                <input class="form-control" name="email" #email="ngModel" ngModel placeholder="enter email"
+                required email>
+                <div class="mt-2 alert alert-danger"
+                *ngIf="email.invalid&&(email.touched||addUser.submitted)">
+            <p *ngIf="email.errors?.['required']">email is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <select name="gender"#gender="ngModel" ngModel placeholder="gender" required>
+            <option value="male">Male</option>
+            <option value="female">female</option></select>
+        </div>
+        
+        <div class="mb-3">
+            <select name="usrtype"#usrtype="ngModel" ngModel placeholder="enter usrtype">
+            <option value="user">user</option>
+            <option value="admin">admin</option></select>
+        </div>
+        <div class="mb-3"> 
+            <button>add</button>
+            </div>
+
+        </form> 
+        </section>
+ -->
+ <h3>Register</h3>
+ <!-- {{addUser.valid}} -->
+ <form [formGroup] ="registerUser" (ngSubmit)="handleRegister()">
+     <div class="mb-3">
+         <input class="form-control"formControlName="username">
+         <div *ngIf="username?.invalid">
+             {{username?.errors?.['minlength']}}
+             {{username?.errors?.['required']}}
+
+
+        </div>
+     </div>
+         
+     <div class="mb-3">
+       <input class="form-control" formControlName="age">
+       <div *ngIf="username?.invalid">
+        {{age?.errors?.['min']}}
+        {{age?.errors?.['required']}}
+   </div>
+     </div>
+         <div class="mb-3">
+            <input class="form-control" formControlName="email">
+            <div *ngIf="email?.invalid">
+                {{email?.errors?.['email']}}
+           
+            {{email?.errors?.['required']}}
+       </div>
+       </div>
+         <div class="mb-3">
+            <input class="form-control" formControlName="password">
+            <div *ngIf="password?.invalid">
+                {{password?.errors?.['minlength']}}
+                {{password?.errors?.['required']}}
+           </div>
+
+       </div>
+         <div class="mb-3">
+            <input class="form-control" formControlName="userphone">
+            <div *ngIf="gender?.invalid">
+                {{userphone?.errors?.['minlength']}}
+           </div>
+     </div>
+     <div class="mb-3">
+         <select name="gender"formControlName="gender" >
+         <option value="male">Male</option>
+         <option value="female">female</option></select>
+         <div *ngIf="gender?.invalid">
+            {{gender?.errors?.['required']}}
+       </div>
+     </div>
+     
+     <div class="mb-3">
+         <select name="usrtype" formControlName="usrtype">
+         <option value="user">user</option>
+         <option value="admin">admin</option></select>
+         <div *ngIf="usrtype?.invalid">
+            {{usrtype?.errors?.['required']}}
+       </div>
+        </div>
+     <div class="mb-3"> 
+         <button class="btn btn-primary">register</button>
+         </div>
+
+     </form> 

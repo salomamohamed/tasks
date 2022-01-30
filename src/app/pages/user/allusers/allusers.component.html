@@ -1,0 +1,43 @@
+
+<!-- <table class="table table-bordered" >
+    <thead>
+        <tr>
+            <!-- <th>_id</th> -->
+            <!-- <th>username</th> -->
+            <!-- <th>age</th>
+            <th>email</th>
+            <th>userphone</th>
+            <th>gender</th> -->
+            <!-- <th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let user of allUsers">
+            <!-- <th>{{user._id}}</th>  -->
+             <!-- <th>{{user.username}}</th> -->
+            <!-- <th>{{user.age}}</th>
+           <th>{{user.email}}</th>
+           <th>{{user.userphone}}</th>
+            <th>{{user.gender}}</th> -->
+            <!-- <th>{{user.img}}<img src="http://localhost:3000/files/{{user.img}}" width="60" height="60"></th>
+        </tr> 
+    </tbody>
+</table>  -->
+
+<div class="row"*ngFor="let user of allUsers" >
+    <div class="card">
+        <h5><span>{{user.username}}</span></h5>
+       <div *ngIf="user.img; else noImage">
+        <img src="http://localhost:3000/files/{{user.img}}" width="70" height="80">
+        </div>
+        <ng-template #noImage>
+            <img class="img-fluid" src="assets/p.jpg"  >
+        </ng-template>
+        <div class="col">
+        <button routerLink="/user/show/{{user._id}}" class="mx-2 btn btn-primary" >show</button>
+        <button routerLink="/user/edit/{{user._id}}"  class="mx-2 btn btn-warning">edit</button>
+        <button routerLink="/user/delete/{{user._id}}"  class="mx-2 btn btn-danger">delete</button>
+    </div>
+        
+    </div>
+</div>

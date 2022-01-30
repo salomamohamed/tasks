@@ -1,0 +1,24 @@
+table {
+    border-collapse: collapse;
+    text-align: center;
+  width: 50%;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  img{
+    display: flex;
+    margin:auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  }
+   
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+   
+  
+ 

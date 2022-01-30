@@ -1,0 +1,17 @@
+<!-- <!-- <div *ngIf="user" class="">
+  <div class="card">
+    <img src="http://locate:3000/user/{{}}"class="header-image">
+   <th>{{user.username}}</th> 
+   <th>{{user.email}}</th> 
+  
+  </div>
+</div> -->
+<p>my profile</p>
+
+<div class="mb-3">
+    <input type="file" (change)="onChange($event)">
+    <img *ngIf="imgURL!=''" [src]="imgURL" height="50" width="50">
+    </div>
+  <div class="mb-3">
+    <button (click)="onUpload()">add image</button>
+  </div>

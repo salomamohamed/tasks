@@ -1,0 +1,31 @@
+<section class="my-4 container">
+    <h3>Image</h3>
+    {{addImg.valid}}
+    <form #addImg="ngForm" (ngSubmit)="handleAddImg(addImg)">
+   <div class="mb-3">
+       <input class="form-control" name="title" ngModel placeholder="title"
+       #title="ngModel"required minlength="2" maxlength="10">
+       <div class="mt-2 alert alert-danger" 
+       *ngIf="title.invalid&&(title.touched||addImg.submitted)">
+     </div>
+   </div>
+   <div class="mb-3">
+    <input class="form-control" name="comment" ngModel placeholder="comment"
+    #comment="ngModel"minlength="3" maxlength="10">
+
+</div>
+<div class="mb-3">
+    <input class="form-control" name="publishdate" ngModel placeholder="publishdate"
+    #publishdate="ngModel" required>
+    <div class="mt-2 alert alert-danger"
+    *ngIf="publishdate.invalid&&(publishdate.touched||addImg.submitted)">
+<p *ngIf="publishdate.errors?.['required']">publishdate is required</p>
+</div>
+
+</div>
+<button class=" btn btn-primary">sub</button>
+
+</form>
+
+
+</section>

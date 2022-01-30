@@ -1,0 +1,36 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin:10px;
+  
+width:900px
+  }
+ .button{width: fit-content;
+
+
+  }
+  img{
+    display: flex;
+    margin:auto;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border-radius: 52%
+
+  }
+   
+ 
+/* table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {background-color: #c3c9c7;} */
